@@ -3,8 +3,6 @@ import {
   BookOpen, 
   Sparkles, 
   Calendar as CalendarIcon, 
-  Moon, 
-  Sun, 
   Flame, 
   LogOut, 
   User, 
@@ -21,8 +19,8 @@ import { FontPreference, ThemeMode, UserSession } from '../types';
 interface NavbarProps {
   userSession: UserSession;
   currentStreak: number;
-  theme: ThemeMode;
-  onToggleTheme: () => void;
+  theme?: ThemeMode;
+  onToggleTheme?: () => void;
   fontPreference: FontPreference;
   onChangeFont: (font: FontPreference) => void;
   onOpenCalendar: () => void;
@@ -35,8 +33,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   userSession,
   currentStreak,
-  theme,
-  onToggleTheme,
   fontPreference,
   onChangeFont,
   onOpenCalendar,
@@ -154,16 +150,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             )}
           </div>
-
-          {/* Dark / Light Mode Switch */}
-          <button
-            type="button"
-            onClick={onToggleTheme}
-            className="w-8 h-8 flex items-center justify-center rounded-full bg-[#18181b] hover:bg-white/10 text-slate-300 border border-white/5 transition-colors"
-            title={theme === 'dark' ? 'Switch Theme' : 'Dark Mode Active'}
-          >
-            {theme === 'dark' ? <Moon className="w-4 h-4 text-indigo-400" /> : <Sun className="w-4 h-4 text-amber-400" />}
-          </button>
 
           {/* User Profile / Menu */}
           <div className="relative">
