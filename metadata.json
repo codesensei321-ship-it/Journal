@@ -1,0 +1,6 @@
+{
+  "name": "Zaid Journal",
+  "description": "An intelligent daily journal with Notion-style slash command block editor, real-time auto-saving indicator, calendar date switcher with consistency heatmaps, and Gemini 2.5 Flash AI journal intelligence memory assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

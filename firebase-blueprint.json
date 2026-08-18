@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "journal_entries": {
+      "title": "Journal Entries",
+      "description": "Daily journal records with structured blocks, tags, and metadata",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Date formatted as YYYY-MM-DD" },
+        "date": { "type": "string", "description": "Date formatted as YYYY-MM-DD" },
+        "title": { "type": "string", "description": "Journal title" },
+        "blocks": { "type": "array", "description": "Array of Notion-style content blocks" },
+        "mood": { "type": "string", "description": "Mood rating" },
+        "tags": { "type": "array", "description": "Tags associated with entry" },
+        "weather": { "type": "string", "description": "Weather summary" },
+        "wordCount": { "type": "number", "description": "Total word count" },
+        "readingTime": { "type": "number", "description": "Estimated reading time in minutes" },
+        "createdAt": { "type": "number", "description": "Creation timestamp in ms" },
+        "updatedAt": { "type": "number", "description": "Last updated timestamp in ms" }
+      },
+      "required": ["id", "date", "blocks", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/journal_entries/{entryId}": {
+      "entity": "journal_entries",
+      "rules": {
+        "read": "true",
+        "write": "true"
+      }
+    }
+  }
+}
